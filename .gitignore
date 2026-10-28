@@ -1,0 +1,23 @@
+# Local verification profiles, generated audio and copied client runtime
+/.verification/
+
+# Upstream checkout used while developing; not part of this plugin
+/MoeKoeMusic/
+
+# Build output and release preparation
+/dist/
+/moekoe-song-downloader/host/
+
+# Local dependencies and editor files
+node_modules/
+.vscode/
+.idea/
+*.user
+*.suo
+*.log
+*.part
+Thumbs.db
+.DS_Store
+.env
+.env.*
+!.env.example

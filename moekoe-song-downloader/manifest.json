@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "MoeKoe 歌曲下载",
+  "version": "0.2.0",
+  "description": "单曲与歌单下载，自选音质和保存文件夹，面板可拖动并记住位置。",
+  "moekoe": true,
+  "plugin_id": "moekoe-song-downloader",
+  "minversion": "1.7.1",
+  "action": {
+    "default_title": "歌曲下载",
+    "default_popup": "popup.html"
+  },
+  "moekoe_permissions": ["moekoe:nativeHost"],
+  "moekoe_native_hosts": [
+    {
+      "id": "song-downloader-saver",
+      "auto_start": false,
+      "bridge": "bridge.html",
+      "platforms": { "win32": { "path": "host/moekoe-song-saver.exe", "args": [] } }
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["page-bridge.js"], "matches": ["<all_urls>"] }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*",
+        "https://*.moekoe.cn/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": ["core.js", "data.js", "view.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

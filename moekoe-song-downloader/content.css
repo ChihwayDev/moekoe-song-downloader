@@ -1,0 +1,132 @@
+[data-mkd-trigger] {
+  appearance: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 34px !important;
+  margin: 0 2px !important;
+  padding: 6px !important;
+  border: 0 !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  opacity: .8;
+  -webkit-app-region: no-drag;
+}
+[data-mkd-trigger]:hover, [data-mkd-trigger][aria-expanded="true"] {
+  opacity: 1;
+  background: rgba(120, 120, 140, .16) !important;
+}
+[data-mkd-trigger]:focus-visible { outline: 2px solid #9c8cff !important; outline-offset: 2px; }
+[data-mkd-trigger].mkd-busy { color: #a795ff !important; }
+
+#moekoe-song-downloader {
+  all: initial;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 2147483646;
+  left: 24px;
+  bottom: 104px;
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100vh - 180px);
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid #454052;
+  border-radius: 18px;
+  background: #211e29;
+  color: #f4f0ff;
+  box-shadow: 0 14px 48px #0006;
+  font: 14px/1.65 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  text-align: left;
+  color-scheme: dark;
+  -webkit-app-region: no-drag;
+}
+#moekoe-song-downloader[hidden], #moekoe-song-downloader [hidden] { display: none !important; }
+#moekoe-song-downloader * { box-sizing: border-box; }
+#moekoe-song-downloader header {
+  display: flex; align-items: center; justify-content: space-between; margin: 0 0 12px;
+  font-size: 15px; font-weight: 700;
+}
+#moekoe-song-downloader button {
+  appearance: none; font: inherit; cursor: pointer; letter-spacing: 0; text-transform: none;
+}
+#moekoe-song-downloader [data-close] {
+  padding: 0; width: 28px; height: 28px; border: 0; border-radius: 8px;
+  background: transparent; color: #bbb3ca; font-size: 22px; line-height: 1;
+}
+#moekoe-song-downloader [data-close]:hover { background: #ffffff12; }
+#moekoe-song-downloader .mkd-song { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+#moekoe-song-downloader .mkd-song > div { min-width: 0; }
+#moekoe-song-downloader .mkd-note {
+  flex: 0 0 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid #625078; border-radius: 12px; background: #443653; color: #d7b8ff; font-size: 24px;
+}
+#moekoe-song-downloader strong { display: block; color: inherit; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; }
+#moekoe-song-downloader p { margin: 0; padding: 0; font: inherit; color: inherit; }
+#moekoe-song-downloader [data-author] { margin-top: 3px; color: #bbb3ca; overflow-wrap: anywhere; }
+#moekoe-song-downloader .mkd-quality { display: inline-block; padding: 2px 9px; border: 1px solid #655079; border-radius: 6px; color: #dfc3ff; font-size: 12px; }
+#moekoe-song-downloader .mkd-hint { margin: 9px 0 16px; color: #bbb3ca; font-size: 12px; }
+#moekoe-song-downloader progress { width: 100%; height: 7px; border: 0; border-radius: 7px; overflow: hidden; accent-color: #b194ff; }
+#moekoe-song-downloader .mkd-progress { margin: 4px 0 10px; color: #cbb6ff; font-size: 12px; font-variant-numeric: tabular-nums; }
+#moekoe-song-downloader .mkd-status { padding: 11px 12px; border-radius: 10px; background: #ffffff08; color: #c4bdcf; font-size: 12px; overflow-wrap: anywhere; }
+#moekoe-song-downloader [data-phase="error"] { color: #ffb3b9; background: #b942531c; }
+#moekoe-song-downloader [data-phase="handed-off"] { color: #b5e3ca; background: #3d9d6d15; }
+#moekoe-song-downloader .mkd-actions { display: flex; gap: 10px; margin-top: 16px; }
+#moekoe-song-downloader .mkd-actions button { min-height: 40px; padding: 8px 15px; border: 0; border-radius: 10px; font-weight: 600; line-height: 1.5; }
+#moekoe-song-downloader [data-start] { flex: 1; background: #bda4fa; color: #241737; }
+#moekoe-song-downloader [data-start]:hover:not(:disabled) { background: #cbb6ff; }
+#moekoe-song-downloader [data-start]:disabled { cursor: default; opacity: .45; }
+#moekoe-song-downloader [data-cancel] { background: #ffffff12; color: #eee7fa; }
+#moekoe-song-downloader button:focus-visible { outline: 2px solid #cbb6ff; outline-offset: 3px; }
+#moekoe-song-downloader [data-drag] { cursor: grab; touch-action: none; user-select: none; }
+#moekoe-song-downloader > header { flex: 0 0 auto; }
+#moekoe-song-downloader .mkd-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; scrollbar-width: thin; }
+#moekoe-song-downloader .mkd-actions { flex: 0 0 auto; }
+#moekoe-song-downloader [data-drag]:active { cursor: grabbing; }
+#moekoe-song-downloader header small { margin-left: 5px; color: #aaa0bc; font-size: 10px; font-weight: 400; }
+#moekoe-song-downloader .mkd-header-actions { display: flex; align-items: center; gap: 6px; }
+#moekoe-song-downloader select, #moekoe-song-downloader input:not([type="checkbox"]) {
+  display: block; min-width: 0; width: 100%; height: 34px; padding: 5px 9px;
+  border: 1px solid #4c425b; border-radius: 8px; outline: none;
+  background: #2b2534; color: #eee6fb; font: inherit; font-size: 12px; line-height: 1.5;
+}
+#moekoe-song-downloader select:focus, #moekoe-song-downloader input:focus { border-color: #bda4fa; }
+#moekoe-song-downloader [data-position] { width: 72px; height: 28px; font-size: 11px; padding: 3px 6px; cursor: pointer; }
+#moekoe-song-downloader input[type="checkbox"] { appearance: auto; width: 14px; height: 14px; margin: 0; accent-color: #bda4fa; flex: 0 0 14px; }
+#moekoe-song-downloader .mkd-tabs { display: flex; gap: 6px; background: #ffffff07; padding: 4px; border-radius: 10px; margin-bottom: 15px; }
+#moekoe-song-downloader .mkd-tabs button { width: 50%; background: transparent; color: #bfb2ce; border: 0; border-radius: 7px; padding: 6px; font-size: 13px; }
+#moekoe-song-downloader .mkd-tabs button[aria-pressed="true"] { background: #bda4fa25; color: #e4d5ff; }
+#moekoe-song-downloader .mkd-field { margin-top: 12px; }
+#moekoe-song-downloader .mkd-field > label { display: block; margin-bottom: 5px; color: #c7bed4; font-size: 12px; }
+#moekoe-song-downloader .mkd-row { display: flex; gap: 7px; align-items: center; margin-bottom: 7px; }
+#moekoe-song-downloader .mkd-row > input, #moekoe-song-downloader .mkd-row > select { flex: 1; }
+#moekoe-song-downloader .mkd-row > button, #moekoe-song-downloader .mkd-pages button { border: 1px solid #4c425b; border-radius: 7px; background: #ffffff08; color: #e7dcf8; padding: 5px 10px; min-height: 32px; white-space: nowrap; font-size: 12px; }
+#moekoe-song-downloader button:disabled { opacity: .45; cursor: default; }
+#moekoe-song-downloader .mkd-text-button { background: transparent; color: #c7acff; border: 0; padding: 1px 0 7px; font-size: 12px; }
+#moekoe-song-downloader .mkd-selection { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #c8bcd6; margin: 6px 0; }
+#moekoe-song-downloader .mkd-selection label, #moekoe-song-downloader .mkd-check { display: flex; gap: 7px; align-items: center; }
+#moekoe-song-downloader .mkd-check { margin-top: 10px; color: #c8bcd6; font-size: 12px; }
+#moekoe-song-downloader .mkd-tracks { max-height: 160px; overflow-y: auto; scrollbar-width: thin; }
+#moekoe-song-downloader .mkd-track { display: flex; gap: 9px; align-items: center; padding: 7px 3px; border-bottom: 1px solid #ffffff09; cursor: pointer; }
+#moekoe-song-downloader .mkd-track-text { min-width: 0; flex: 1; line-height: 1.5; }
+#moekoe-song-downloader .mkd-track-text > span, #moekoe-song-downloader .mkd-track-text > small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
+#moekoe-song-downloader .mkd-track-text > small { color: #afa2bf; font-size: 10px; }
+#moekoe-song-downloader .mkd-track-text [data-result="error"] { color: #ffacb5; }
+#moekoe-song-downloader .mkd-pages { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 7px; font-size: 11px; }
+#moekoe-song-downloader .mkd-native { color: #cdb279; font-size: 10px; margin: 8px 0 10px; }
+#moekoe-song-downloader .mkd-native[data-ready="true"] { color: #9ebba9; }
+#moekoe-song-downloader [data-phase="completed"] { color: #b5e3ca; background: #3d9d6d15; }
+#moekoe-song-downloader [data-phase="partial"] { color: #e4c48c; }
+#moekoe-song-downloader [data-list-title] { margin: 2px 0 6px; font-size: 11px; }
+
+/* The plugin popup uses the same panel, with a normal document flow. */
+body.mkd-popup { margin: 0; background: #211e29; min-width: 280px; }
+body.mkd-popup #moekoe-song-downloader {
+  position: static; width: 100%; height: 100vh; min-height: 0; max-height: 100vh;
+  border: 0; border-radius: 0; box-shadow: none;
+}

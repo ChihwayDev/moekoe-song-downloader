@@ -1,0 +1,10 @@
+{
+  "name": "moekoe-song-downloader-workspace",
+  "version": "0.2.0",
+  "license": "GPL-2.0-only",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/core.test.cjs tests/data.test.cjs tests/native.test.cjs tests/page-bridge.test.cjs",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/package.ps1"
+  }
+}
